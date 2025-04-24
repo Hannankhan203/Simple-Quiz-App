@@ -24,7 +24,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: min-content;
   width: 80vw;
   height: 90vh;
   border-radius: 10px;
@@ -95,8 +94,8 @@ form {
 label {
   display: flex;
   /* border: 2px solid black; */
-height: 5vh;
-align-items: center;
+  height: 5vh;
+  align-items: center;
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
@@ -215,25 +214,19 @@ button:active {
   .container {
     /* border: 2px solid black; */
     padding: 10px;
-    width: 80vw;
+    justify-content: space-between;
     height: 60vh;
-    justify-content: space-evenly;
   }
 
   .heading {
     /* border: 2px solid black; */
     font-size: 1rem;
+    padding: 5px;
   }
 
   .quiz-container {
     /* border: 2px solid black; */
     padding: 0px;
-    height: 60%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
   }
 
   .top-section {
@@ -248,48 +241,41 @@ button:active {
 
   .choices {
     /* border: 2px solid black; */
-    gap: 10px;
-    height: 80%;
+    gap: 5px;
     font-size: 0.5rem;
-  }
-
-  label .checkmark:after {
-    top: 4px;
-    left: 4px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: white;
-  }
-
-  .checkmark {
-    /* border: 2px solid black; */
-    height: 15px;
-    width: 15px;
-    top: -3px;
-    left: 15px;
+    padding: 0;
+    height: 80%;
   }
 
   p {
     font-size: 0.5rem;
   }
 
-  .buttons {
-    gap: 10px;
+  .checkmark {
+    top: 0.4rem;
+    left: 0.6rem;
+    height: 15px;
+    width: 15px;
+  }
+
+  label .checkmark:after {
+    top: 0.35rem;
+    left: 0.34rem;
+    width: 4px;
+    height: 4px;
   }
 
   button {
-    padding: 8px 30px;
+    padding: 8px 40px;
     font-size: 0.8rem;
   }
 
   .result-window {
     /* border: 2px solid black; */
-    padding: 20px;
-    width: 80%;
+    width: 70%;
     height: 30%;
   }
-  
+
   .end-msg {
     font-size: 0.8rem;
   }
