@@ -5,7 +5,7 @@
 
 ## ✨ Features
 - ✅ Dynamic MCQ Rendering – Displays each question with four options and highlights progress.
-- ⏱️ Countdown Timer – Limits total time to answer all questions (e.g., 9 minutes 50 seconds).
+- ⏱️ Countdown Timer – Limits total time to answer all questions (e.g., 9 minutes 59 seconds).
 - 🧠 Score Tracking – Automatically checks answers and updates the score.
 - 🔁 Restart Functionality – Allows the user to restart the quiz with timer and score reset.
 - ⚠️ Option Validation – Alerts if no option is selected before moving to the next question.
