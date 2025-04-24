@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <title>Quiz App</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">Quiz App</h1>
+      <div class="quiz-container">
+        <div class="top-section">
+          <div class="question-number"></div>
+          <div class="timer">
+            <span class="minutes">09</span>:<span class="seconds">59</span>
+          </div>
+        </div>
+        <form action="">
+          <div class="choices">
+            <h2 class="question"></h2>
+
+            <label for="radio-1">
+              <input
+                type="radio"
+                name="mcq-opt"
+                id="radio-1"
+                class="option-1"
+              />
+              <span class="checkmark"></span>
+              <p class="opt-1-txt"></p>
+            </label>
+
+            <label for="radio-2">
+              <input
+                type="radio"
+                name="mcq-opt"
+                id="radio-2"
+                class="option-2"
+              />
+              <span class="checkmark"></span>
+              <p class="opt-2-txt"></p>
+            </label>
+
+            <label for="radio-3">
+              <input
+                type="radio"
+                name="mcq-opt"
+                id="radio-3"
+                class="option-3"
+              />
+              <span class="checkmark"></span>
+              <p class="opt-3-txt"></p>
+            </label>
+
+            <label for="radio-4">
+              <input
+                type="radio"
+                name="mcq-opt"
+                id="radio-4"
+                class="option-4"
+              />
+              <span class="checkmark"></span>
+              <p class="opt-4-txt"></p>
+            </label>
+          </div>
+        </form>
+        <div class="buttons">
+          <button class="next-btn">Next</button>
+        <button class="restart-btn">Restart</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="JS/mcqs.js"></script>
+    <script src="JS/script.js"></script>
+  </body>
+</html>
