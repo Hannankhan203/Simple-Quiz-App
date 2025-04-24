@@ -207,6 +207,15 @@ button:active {
     font-size: 0.5rem;
   }
 
+  label .checkmark:after {
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+
   .checkmark {
     height: 15px;
     width: 15px;
