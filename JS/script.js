@@ -21,7 +21,6 @@ let score = 0;
 let totalTime = 9 * 60 + 59;
 
 resultWindow.classList.add("hidden");
-console.log(index / 2);
 const renderMCQS = () => {
   const currentMCQ = mcqs[index];
   if (index >= mcqs.length) {
