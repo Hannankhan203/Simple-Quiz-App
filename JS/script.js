@@ -11,7 +11,7 @@ const textOption2 = document.querySelector(".opt-2-txt");
 const textOption3 = document.querySelector(".opt-3-txt");
 const textOption4 = document.querySelector(".opt-4-txt");
 const nextBtn = document.querySelector(".next-btn");
-const `restartBtn` = document.querySelector(".restart-btn");
+const restartBtn = document.querySelector(".restart-btn");
 const resultWindow = document.querySelector(".result-window");
 const endMsg = document.querySelector(".end-msg");
 
@@ -154,4 +154,4 @@ const restartQuiz = () => {
 
 renderMCQS();
 nextBtn.addEventListener("click", nextMCQ);
-`restartBtn`.addEventListener("click", restartQuiz);
+restartBtn.addEventListener("click", restartQuiz);
