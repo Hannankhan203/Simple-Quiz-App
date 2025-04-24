@@ -14,6 +14,7 @@ const nextBtn = document.querySelector(".next-btn");
 const restartBtn = document.querySelector(".restart-btn");
 const resultWindow = document.querySelector(".result-window");
 const endMsg = document.querySelector(".end-msg");
+const okayBtn = document.querySelector(".okay-btn");
 
 let index = 0;
 let score = 0;
@@ -27,13 +28,13 @@ const renderMCQS = () => {
     endMsg.textContent = `MCQs completed, you scored: ${score}`;
     index = 0;
     score = 0;
+    okayBtn.classList.add("hidden");
     resultWindow.classList.remove("hidden");
     inputOption1.disabled = true;
     inputOption2.disabled = true;
     inputOption3.disabled = true;
     inputOption4.disabled = true;
     nextBtn.disabled = true;
-    `restartBtn`.disabled = false;
     clearInterval(timerInterval);
     renderMCQS();
     return;
@@ -68,7 +69,11 @@ const nextMCQ = () => {
     inputOption3.checked === false &&
     inputOption4.checked === false
   ) {
-    alert("Please select an option before proceeding");
+    // alert("Please select an option before proceeding");
+    resultWindow.classList.remove("hidden");
+    restartBtn.classList.add("hidden");
+    okayBtn.classList.remove("hidden");
+    endMsg.textContent = "Please select an option before proceeding";
     return;
   }
 
@@ -115,6 +120,7 @@ const timer = () => {
   if (totalTime <= 0) {
     clearInterval(timerInterval);
     endMsg.textContent = `Time is up, you answerd ${index} mcqs and your score is ${score}`;
+    okayBtn.classList.add("hidden");
     resultWindow.classList.remove("hidden");
     inputOption1.disabled = true;
     inputOption2.disabled = true;
@@ -152,6 +158,14 @@ const restartQuiz = () => {
   resetSelections();
 };
 
+const pressOkay = () => {
+  endMsg.textContent = "";
+  resultWindow.classList.add('hidden');
+  restartBtn.classList.remove('hidden');
+  okayBtn.classList.add("hidden");
+}
+
 renderMCQS();
 nextBtn.addEventListener("click", nextMCQ);
 restartBtn.addEventListener("click", restartQuiz);
+okayBtn.addEventListener("click", pressOkay);
