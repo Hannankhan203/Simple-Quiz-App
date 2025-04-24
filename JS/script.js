@@ -11,7 +11,7 @@ const textOption2 = document.querySelector(".opt-2-txt");
 const textOption3 = document.querySelector(".opt-3-txt");
 const textOption4 = document.querySelector(".opt-4-txt");
 const nextBtn = document.querySelector(".next-btn");
-const restartBtn = document.querySelector(".restart-btn");
+const `restartBtn` = document.querySelector(".restart-btn");
 const resultWindow = document.querySelector(".result-window");
 const endMsg = document.querySelector(".end-msg");
 
@@ -19,7 +19,6 @@ let index = 0;
 let score = 0;
 let totalTime = 9 * 60 + 59;
 
-// restartBtn.disabled = true;
 resultWindow.classList.add("hidden");
 console.log(index / 2);
 const renderMCQS = () => {
@@ -34,7 +33,7 @@ const renderMCQS = () => {
     inputOption3.disabled = true;
     inputOption4.disabled = true;
     nextBtn.disabled = true;
-    restartBtn.disabled = false;
+    `restartBtn`.disabled = false;
     clearInterval(timerInterval);
     renderMCQS();
     return;
@@ -122,7 +121,6 @@ const timer = () => {
     inputOption3.disabled = true;
     inputOption4.disabled = true;
     nextBtn.disabled = true;
-    restartBtn.disabled = false;
     index = 0;
     score = 0;
     renderMCQS();
@@ -145,7 +143,6 @@ const restartQuiz = () => {
   inputOption3.disabled = false;
   inputOption4.disabled = false;
   nextBtn.disabled = false;
-  restartBtn.disabled = true;
   resultWindow.classList.add("hidden");
   endMsg.textContent = "";
 
@@ -157,4 +154,4 @@ const restartQuiz = () => {
 
 renderMCQS();
 nextBtn.addEventListener("click", nextMCQ);
-restartBtn.addEventListener("click", restartQuiz);
+`restartBtn`.addEventListener("click", restartQuiz);
