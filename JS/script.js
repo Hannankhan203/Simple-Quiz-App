@@ -69,11 +69,15 @@ const nextMCQ = () => {
     inputOption3.checked === false &&
     inputOption4.checked === false
   ) {
-    // alert("Please select an option before proceeding");
     resultWindow.classList.remove("hidden");
     restartBtn.classList.add("hidden");
     okayBtn.classList.remove("hidden");
     endMsg.textContent = "Please select an option before proceeding";
+    inputOption1.disabled = true;
+    inputOption2.disabled = true;
+    inputOption3.disabled = true;
+    inputOption4.disabled = true;
+    nextBtn.disabled = true;
     return;
   }
 
@@ -160,10 +164,15 @@ const restartQuiz = () => {
 
 const pressOkay = () => {
   endMsg.textContent = "";
-  resultWindow.classList.add('hidden');
-  restartBtn.classList.remove('hidden');
+  resultWindow.classList.add("hidden");
+  restartBtn.classList.remove("hidden");
   okayBtn.classList.add("hidden");
-}
+  inputOption1.disabled = false;
+  inputOption2.disabled = false;
+  inputOption3.disabled = false;
+  inputOption4.disabled = false;
+  nextBtn.disabled = false;
+};
 
 renderMCQS();
 nextBtn.addEventListener("click", nextMCQ);
