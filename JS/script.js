@@ -12,19 +12,23 @@ const textOption3 = document.querySelector(".opt-3-txt");
 const textOption4 = document.querySelector(".opt-4-txt");
 const nextBtn = document.querySelector(".next-btn");
 const restartBtn = document.querySelector(".restart-btn");
+const resultWindow = document.querySelector(".result-window");
+const endMsg = document.querySelector(".end-msg");
 
 let index = 0;
 let score = 0;
 let totalTime = 9 * 60 + 59;
 
-restartBtn.disabled = true;
-
+// restartBtn.disabled = true;
+resultWindow.classList.add("hidden");
+console.log(index / 2);
 const renderMCQS = () => {
   const currentMCQ = mcqs[index];
   if (index >= mcqs.length) {
-    alert(`MCQs completed, you scored: ${score}`);
+    endMsg.textContent = `MCQs completed, you scored: ${score}`;
     index = 0;
     score = 0;
+    resultWindow.classList.remove("hidden");
     inputOption1.disabled = true;
     inputOption2.disabled = true;
     inputOption3.disabled = true;
@@ -111,7 +115,8 @@ let timerInterval;
 const timer = () => {
   if (totalTime <= 0) {
     clearInterval(timerInterval);
-    alert(`Time is up, you answerd ${index} mcqs and your score is ${score}`);
+    endMsg.textContent = `Time is up, you answerd ${index} mcqs and your score is ${score}`;
+    resultWindow.classList.remove("hidden");
     inputOption1.disabled = true;
     inputOption2.disabled = true;
     inputOption3.disabled = true;
@@ -141,6 +146,8 @@ const restartQuiz = () => {
   inputOption4.disabled = false;
   nextBtn.disabled = false;
   restartBtn.disabled = true;
+  resultWindow.classList.add("hidden");
+  endMsg.textContent = "";
 
   index = 0;
   score = 0;

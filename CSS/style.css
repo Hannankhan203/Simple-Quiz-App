@@ -171,6 +171,32 @@ button:active {
   transform: scale(0.98);
 }
 
+.result-window {
+  /* border: 2px solid black; */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+  height: 50%;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 5;
+  background-color: cadetblue;
+  box-shadow: 0 0 10px #000, inset 0 0 10px #000;
+}
+
+.end-msg {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
 @media screen and (max-width: 600px) {
   .container {
     /* border: 2px solid black; */
@@ -231,6 +257,17 @@ button:active {
 
   button {
     padding: 8px 30px;
+    font-size: 0.8rem;
+  }
+
+  .result-window {
+    /* border: 2px solid black; */
+    padding: 20px;
+    width: 80%;
+    height: 30%;
+  }
+  
+  .end-msg {
     font-size: 0.8rem;
   }
 }
