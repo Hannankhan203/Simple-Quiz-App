@@ -15,12 +15,26 @@ const restartBtn = document.querySelector(".restart-btn");
 const resultWindow = document.querySelector(".result-window");
 const endMsg = document.querySelector(".end-msg");
 const okayBtn = document.querySelector(".okay-btn");
+const startMsg = document.querySelector(".start-btn");
+const startWindow = document.querySelector(".start-window");
+const startBtn = document.querySelector(".start-btn");
+const labels = document.querySelectorAll("label");
+const heading = document.querySelector(".heading");
+const displayedTimer = document.querySelector(".timer");
 
 let index = 0;
 let score = 0;
 let totalTime = 9 * 60 + 59;
 
 resultWindow.classList.add("hidden");
+labels.forEach((label) => {
+  label.classList.add("hidden");
+});
+heading.classList.add("hidden");
+displayedTimer.classList.add("hidden");
+nextBtn.classList.add("hidden");
+startWindow.classList.remove("hidden");
+
 const renderMCQS = () => {
   const currentMCQ = mcqs[index];
   if (index >= mcqs.length) {
@@ -139,8 +153,6 @@ const timer = () => {
   totalTime--;
 };
 
-timerInterval = setInterval(timer, 1000);
-
 const restartQuiz = () => {
   clearInterval(timerInterval);
   totalTime = 9 * 60 + 59;
@@ -173,7 +185,19 @@ const pressOkay = () => {
   nextBtn.disabled = false;
 };
 
-renderMCQS();
+const startQuiz = () => {
+  renderMCQS();
+  labels.forEach((label) => {
+    label.classList.remove("hidden");
+  });
+  heading.classList.remove("hidden");
+  displayedTimer.classList.remove("hidden");
+  nextBtn.classList.remove("hidden");
+  startWindow.classList.add("hidden");
+  timerInterval = setInterval(timer, 1000);
+}
+
 nextBtn.addEventListener("click", nextMCQ);
 restartBtn.addEventListener("click", restartQuiz);
 okayBtn.addEventListener("click", pressOkay);
+startBtn.addEventListener("click", startQuiz);
