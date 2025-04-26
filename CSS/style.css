@@ -399,7 +399,7 @@ button:active {
 
   .checkmark {
     /* position: absolute; */
-    top: 0.5rem;
+    top: 0.1rem;
     left: 0.8rem;
     height: 15px;
     width: 15px;
@@ -452,7 +452,7 @@ button:active {
 
   .next-btn {
     position: absolute;
-    right: 6rem;
+    right: 7rem;
     bottom: 5rem;
   }
 
